@@ -1,4 +1,4 @@
-<project xmlns:ivy="antlib:org.apache.ivy.ant" name="kpaaro" default="war">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="kpaaro" default="compile">
 <property name="src.dir" location="src"/>
 <property name="build.dir" location="build"/>
 <property name="classes.dir" location="${build.dir}/classes"/>
