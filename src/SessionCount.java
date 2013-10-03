@@ -12,9 +12,6 @@ public class SessionCount extends HttpServlet {
 
 	
 
-	public SessionCount() {
-		super();
-	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().println(String.format("count: %s", SessionCountListener.getActiveSessionsCount()));
