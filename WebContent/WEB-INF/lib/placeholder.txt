@@ -1,1 +1,0 @@
-This file allows empty lib folder to be pushed to the git repository
