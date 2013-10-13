@@ -1,37 +1,42 @@
-
-
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Dao.Dao;
-import Dao.Unit;
+import Dao.SetupDao;
 
 /**
- * Servlet implementation class Add
+ * Servlet implementation class Admin
  */
-public class Add extends HttpServlet {
+public class Admin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/jsp/add.jsp").forward(request, response);
+		if(request.getParameter("do") != null){
+			String method = request.getParameter("do");
+			
+			if(method.equals("clear_data")){
+				clear();
+			} else if(method.equals("insert_data")){
+				insert();
+			}
+			
+			response.sendRedirect("Search");
+		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String code = request.getParameter("code");
-		String name = request.getParameter("name");
-		
-		Unit unit = new Unit(name,code);
-		unit.setId(new Dao().addUnit(unit));
-		
-		response.sendRedirect("Search");
+		// TODO Auto-generated method stub
+	}
+	
+	private void clear(){
+		new Dao().flushDataDb();
+	}
+	
+	private void insert(){
+		new SetupDao().insertTestData();
 	}
 
 }
-

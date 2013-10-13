@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="C:/Users/Kaur/Downloads/commons-dbutils-1.5.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Kaur/Downloads/ant-jar-1.9.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Kaur/Downloads/ant-launcher-jar-1.9.2.jar"/>
+	<classpathentry kind="lib" path="/i3773/WebContent/WEB-INF/lib/jstljar1.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
