@@ -1,11 +1,15 @@
+package servlet;
+
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Dao.Dao;
-import Dao.SetupDao;
+import dbaccess.Dao;
+import dbaccess.SetupDao;
 
 /**
  * Servlet implementation class Admin
@@ -32,7 +36,12 @@ public class Admin extends HttpServlet {
 	}
 	
 	private void clear(){
-		new Dao().flushDataDb();
+		try {
+			new Dao().deleteAll();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	private void insert(){
