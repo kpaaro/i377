@@ -36,7 +36,7 @@ public class Admin extends HttpServlet {
 	}
 	
 	private void insert(){
-		new SetupDao().insertTestData();
+		new SetupDao().addTestData();
 	}
 
 }
