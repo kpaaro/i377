@@ -1,6 +1,7 @@
 import java.io.File;
 
 
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
@@ -39,7 +40,6 @@ public class SessionInitListner implements ServletContextListener {
 	}
 
 	private boolean dbExists() {
-		return !new File(System.getProperty("user.home") + AbstractDao.DB_URL
-				+ ".script").exists();
+		 return new File(System.getProperty("user.home") + "/data/kpaaro/db.script").exists();
 	}
 }

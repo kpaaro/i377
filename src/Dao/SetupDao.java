@@ -1,7 +1,5 @@
 package Dao;
 
-
- 
 import java.io.File;
 
 import org.apache.tools.ant.Project;
@@ -14,7 +12,8 @@ public class SetupDao extends AbstractDao {
    }
 
    public void addTestData()  {
-      executeSqlFromFile(getClassPathFile("testData.sql"));      
+      executeSqlFromFile(getClassPathFile("testData.sql"));
+
    }
 
    private String getClassPathFile(String fileName) {

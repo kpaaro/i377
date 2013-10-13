@@ -24,13 +24,18 @@ public class Add extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		addUnitm(request);
+		
+		response.sendRedirect("Search");
+	}
+
+	private void addUnitm(HttpServletRequest request) {
 		String code = request.getParameter("code");
 		String name = request.getParameter("name");
 		
 		Unit unit = new Unit(name,code);
-		unit.setId(new Dao().addUnit(unit));
 		
-		response.sendRedirect("Search");
+		unit.setId(new Dao().addUnit(unit));
 	}
 
 }
